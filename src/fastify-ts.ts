@@ -8,15 +8,15 @@ export enum HttpMethod {
 }
 
 // tslint:disable-next-line: variable-name
-export const Route = (
-  path: string,
-  method: HttpMethod,
-  opts: RouteShorthandOptions
-): MethodDecorator => {
-  return (
-    target: any,
-    propertyKey: string | symbol,
-  ) => {
+export const Route = (options: {
+  path: string;
+  method: HttpMethod;
+  opts: RouteShorthandOptions;
+}): MethodDecorator => {
+  // tslint:disable-next-line: no-any
+  return (target: any, propertyKey: string | symbol) => {
+    // tslint:disable-next-line: prefer-const
+    let { path, method, opts } = options;
     const handler = target[propertyKey];
     const basePath = target['basePath'];
     if (basePath) {
