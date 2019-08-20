@@ -6,6 +6,6 @@ export class Tweet {
   @Route('/tweet', HttpMethod.GET, {})
   async get(request: FastifyRequest, reply: FastifyReply<ServerResponse>) {
     console.log('get tweet has been called');
-    return { pong: 'tweet' };
+    return { tweet: 'I am a bird' };
   }
 }
