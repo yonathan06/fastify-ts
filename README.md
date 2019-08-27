@@ -39,7 +39,7 @@ export class MyRouteModule {
 declaring the main server module (which consumes other routes modules and plugins)
 will be under `src/app/main.ts`:
 ```typescript
-import { ServerModule } from '../../';
+import { ServerModule } from '@fastify-ts'; //Doesn't really exists at npm;
 import * as helmet from 'fastify-helmet';
 import { MyRouteModule } from './routes/tweet';
 
