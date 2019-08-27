@@ -19,7 +19,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^2.7.1"
+    "fastify": "^2.7.1",
+    "fastify-helmet": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "^10.0.3",

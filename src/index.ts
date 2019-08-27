@@ -1,12 +1,7 @@
-import { server } from './app/main';
+import { MainServer } from './app/main';
 
 const start = async () => {
-  try {
-    await server.listen(3000);
-    console.log(`server listening on ${3000}`);
-  } catch (err) {
-    server.log.error(err);
-    process.exit(1);
-  }
+  const PORT = Number(process.env.PORT) || 3000;
+  await MainServer.start(PORT);
 };
 start();

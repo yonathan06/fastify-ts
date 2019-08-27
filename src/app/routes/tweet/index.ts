@@ -1,15 +1,27 @@
-import { ServerResponse } from 'http';
-import { FastifyRequest, FastifyReply } from 'fastify/fastify';
-import { Route, HttpMethod } from '../../../fastify-ts';
+import * as fastify from 'fastify';
+import { Server, IncomingMessage, ServerResponse } from 'http';
+import { RouteModule, Get } from '../../../../index';
 
-export class Tweet {
-  @Route({
-    path: '/tweet',
-    method: HttpMethod.GET,
-    opts: {},
-  })
-  async get(request: FastifyRequest, reply: FastifyReply<ServerResponse>) {
-    console.log('get tweet has been called');
-    return { tweet: 'I am a bird' };
+@RouteModule({})
+export class TwitterModule {
+  static opts: fastify.ServerOptions;
+  static registrar() {
+    throw new Error('Method not implemented.');
+  }
+  constructor(
+    public server: fastify.FastifyInstance<
+      Server,
+      IncomingMessage,
+      ServerResponse
+    >
+  ) {
+  }
+
+  @Get(`/ping`)
+  async ping(
+    request: fastify.FastifyRequest,
+    replay: fastify.FastifyReply<ServerResponse>
+  ) {
+    return `pong`;
   }
 }
