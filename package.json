@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "serve": "node build",
+    "serve": "node build/src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "check": "gts check",
     "clean": "gts clean",
@@ -20,7 +20,8 @@
   "license": "ISC",
   "dependencies": {
     "fastify": "^2.7.1",
-    "fastify-helmet": "^3.0.1"
+    "fastify-helmet": "^3.0.1",
+    "pino-pretty": "^3.2.1"
   },
   "devDependencies": {
     "@types/node": "^10.0.3",

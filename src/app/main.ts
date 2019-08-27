@@ -1,18 +1,16 @@
 import { ServerModule } from '../../';
 import * as helmet from 'fastify-helmet';
 
-import { TwitterModule } from './routes/tweet';
+import { MyRouteModule } from './routes/my-route';
 
 @ServerModule({
   options: {
-    logger: {
-      prettyPrint: true,
-    },
+    logger: true,
   },
   plugins: [
     { registrar: helmet },
     //routes
-    TwitterModule,
+    MyRouteModule,
   ],
 })
 export class MainServer {

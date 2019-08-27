@@ -3,7 +3,7 @@ import { Server, IncomingMessage, ServerResponse } from 'http';
 import { RouteModule, Get } from '../../../../index';
 
 @RouteModule({})
-export class TwitterModule {
+export class MyRouteModule {
   static opts: fastify.ServerOptions;
   static registrar() {
     throw new Error('Method not implemented.');
