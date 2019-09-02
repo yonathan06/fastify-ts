@@ -14,7 +14,7 @@ import { MyRouteModule } from './routes/my-route';
   ],
 })
 export class MainServer {
-  static start(port: number) {
-    throw new Error('Not implemented');
+  static create(): any {
+    throw new Error("Method not implemented.");
   }
 }

@@ -2,12 +2,8 @@ import * as fastify from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
 import { RouteModule, Get } from '../../../../index';
 
-@RouteModule({})
+@RouteModule()
 export class MyRouteModule {
-  static opts: fastify.ServerOptions;
-  static registrar() {
-    throw new Error('Method not implemented.');
-  }
   constructor(
     public server: fastify.FastifyInstance<
       Server,

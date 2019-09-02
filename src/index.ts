@@ -2,6 +2,7 @@ import { MainServer } from './app/main';
 
 const start = async () => {
   const PORT = Number(process.env.PORT) || 3000;
-  await MainServer.start(PORT);
+  const server = MainServer.create();
+  await server.listen(PORT);
 };
 start();

@@ -11,12 +11,8 @@ import * as fastify from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
 import { RouteModule, Get } from '@fastify-ts'; //Doesn't really exists at npm
 
-@RouteModule({})
+@RouteModule()
 export class MyRouteModule {
-  static opts: fastify.ServerOptions;
-  static registrar() {
-    throw new Error('Method not implemented.');
-  }
   constructor(
     public server: fastify.FastifyInstance<
       Server,
@@ -56,9 +52,6 @@ import { MyRouteModule } from './routes/tweet';
   ],
 })
 export class MainServer {
-  static start(port: number) {
-    throw new Error('Not implemented');
-  }
 }
 ```
 
@@ -69,7 +62,8 @@ import { MainServer } from './app/main';
 
 const start = async () => {
   const PORT = Number(process.env.PORT) || 3000;
-  await MainServer.start(PORT);
+  const server = MainServer.create();
+  await server.listen(PORT);
 };
 start();
 ```
