@@ -18,9 +18,7 @@ export class MyRouteModule {
       Server,
       IncomingMessage,
       ServerResponse
-    >
-  ) {
-  }
+    >) { }
 
   @Get(`/ping`)
   async ping(
